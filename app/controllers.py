@@ -35,16 +35,12 @@ def create():
     if 'username' not in session:
         return redirect(url_for('book_controller.login'))
     if request.method == 'POST':
-        title = request.form['title']
-        author = request.form['author']
-        published_date = request.form['published_date']
-        isbn = request.form['isbn']
+        Nama_barang = request.form['Nama_barang']
+        Jumlah_barang = request.form['Jumlah_barang']
+        Tanggal_masuk = request.form['Tanggal_masuk']
+        harga = request.form['harga']
         
-        if Book.title_exists(title):
-            flash('A book with this title already exists.', 'error')
-            return render_template('create.html')
-        
-        new_book = Book(title, author ,published_date, isbn,)
+        new_book = Book(Nama_barang, Jumlah_barang,Tanggal_masuk, harga,)
         Book.create_book(new_book)
         return redirect(url_for('book_controller.index'))
     return render_template('create.html')
