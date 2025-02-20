@@ -19,4 +19,4 @@ Berikut adalah flowchart yang menggambarkan alur kerja aplikasi:
   
 ## Link video dokumantasi
 Anda dapat menonton video dokumentasi aplikasi melalui tautan berikut:
-[klik disini] (https://youtu.be/JnupzMLjfaY?si=pGRIku5xFN_pLJHr)
+[klik disini](https://youtu.be/JnupzMLjfaY?si=pGRIku5xFN_pLJHr)
