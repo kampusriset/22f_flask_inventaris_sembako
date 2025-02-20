@@ -7,7 +7,7 @@ class Database:
             host='localhost',
             user='root',
             password='',
-            database='pemrograman_db'
+            database='uas_pemrograman_lanjut'
         )
         self.cursor = self.connection.cursor()
 
@@ -57,8 +57,8 @@ class User:
         db.close()
 
 class Book:
-    def __init__(self, Nama_barang, author, published_date, isbn):
-        self.title = Nama_barang
+    def __init__(self, title, author, published_date, isbn):
+        self.title = title
         self.author = author
         self.published_date = published_date
         self.isbn = isbn
@@ -84,16 +84,16 @@ class Book:
     @staticmethod
     def create_book(book):
         db = Database()
-        db.cursor.execute("INSERT INTO books (Nama_barang, Jumlah_barang, Tanggal_masuk, harga) VALUES (%s, %s, %s, %s)",
-        (book.Nama_barang, book.Jumlah_barang, book.Tanggal_masuk, book.harga))
+        db.cursor.execute("INSERT INTO books (title, author, published_date, isbn,) VALUES (%s, %s, %s, %s)",
+        (book.title, book.author, book.published_date, book.isbn,))
         db.connection.commit()
         db.close()
 
     @staticmethod
     def update_book(book_id, book):
         db = Database()
-        db.cursor.execute("UPDATE books SET Nama_barang = %s, Jumlah_barang = %s, Tanggal_masuk = %s, harga = %s WHERE id = %s",  
-        (book.Nama_barang, book.Jumlah_barang, book.Tanggal_masuk, book.harga, book_id))
+        db.cursor.execute("UPDATE books SET title = %s, author = %s, published_date = %s, isbn = %s WHERE id = %s",
+        (book.title, book.author, book.published_date, book.isbn, book_id))
         db.connection.commit()
         db.close()
 
@@ -124,7 +124,7 @@ class Book:
     @staticmethod
     def title_exists(title):
         db = Database()
-        db.cursor.execute("SELECT COUNT(*) FROM books WHERE Nama_barang = %s", (title,))
+        db.cursor.execute("SELECT COUNT(*) FROM books WHERE title = %s", (title,))
         exists = db.cursor.fetchone()[0] > 0
         db.close()
         return exists
