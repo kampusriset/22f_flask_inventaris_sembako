@@ -6,6 +6,6 @@ def perkenalan(nama, nim, peran) :
 if _ _name_ _ ## "_ _main":
     nama = "Retno Putri Rahmadani"
     nim = "22.130.10.358"
-    peran = "Perancangan"
+    peran = "Mengusulkan berbagai IDE"
 
     perkenalan(nama, nim, peran)
