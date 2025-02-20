@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <style>
+        .jumbotron {
+            background: linear-gradient(to right, #007bff, #00aaff);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron text-center">
+            <h1>Register</h1>
+            <p class="lead">Create a new account to get started.</p>
+        </div>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <p>Already have an account? <a href="/login">Login here</a></p>
+    </div>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
