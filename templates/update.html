@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <style>
+        .jumbotron {
+            background: linear-gradient(to right, #007bff, #00aaff);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron text-center">
+            <h1>Update Book</h1>
+            <p class="lead">Modify the details of your book below.</p>
+        </div>
+        <nav class="d-flex justify-content-end">
+            <div class="btn-group">
+                <a class="btn btn-secondary btn-sm" href="/">Back to Dashboard</a>
+                <a class="btn btn-danger btn-sm" href="/logout">Logout</a>
+            </div>
+        </nav>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="Nama_barang" class="form-label">Nama_barang:</label>
+                <input type="text" class="form-control" id="Nama_barang" name="Nama_barang" value="{{ book[1] }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="Jumlah_barang" class="form-label">Jumlah_barang:</label>
+                <input type="text" class="form-control" id="Jumlah_barang" name="Jumlah_barang" value="{{ book[2] }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="Tanggal_masuk" class="form-label">Tanggal_masuk:</label>
+                <input type="date" class="form-control" id="Tanggal_masuk" name="Tanggal_masuk" value="{{ book[3] }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="harga" class="form-label">harga:</label>
+                <input type="text" class="form-control" id="harga" name="harga" value="{{ book[4] }}" required>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">Update Book</button>
+                <a class="btn btn-secondary" href="/books">Back to List</a>
+            </div>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
